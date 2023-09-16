@@ -9,36 +9,40 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
     <link rel="stylesheet" href="main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="flex flex-col justify-center h-[100vh] w-[100vw] items-center">
+    <div class="flex flex-col justify-center h-[100vh] w-[100vw] items-center
+    bg-gradient-to-r from-violet-500 to-fuchsia-500">
       <!-- heading -->
-      <div><h1 class="text-[30px]">Pawssord genertor</h1></div>
+      <div class="font-bold my-[15px]">
+        <h1 class="text-[30px]">Pawssord Genertor</h1>
+      </div>
 
       <!-- display container -->
       <div
-        class="border w-[300px] flex justify-between px-[20px]"
+        class=" w-[300px] flex justify-between px-[20px] py-[13px] rounded-lg border bg-violet-900"
         id="password-display"
       >
-        <input readonly placeholder="Password" id="pass" />
+        <input readonly placeholder="Password" id="pass" class="bg-transparent text-[20px] text-yellow-400 " />
 
         <button id="copy-btn">
           <span id="copy-msg"></span>
-          <i class="fa-solid fa-copy"></i>
+          <i class="fa-solid fa-copy text-white text-[20px]"></i>
         </button>
       </div>
 
       <!-- main - box -->
 
-      <div class="border px-[20px] w-[300px] bg-black text-white">
-        <div class="flex justify-between w-[100%]">
-          <p>Password Length</p>
-          <p id="length-number">0</p>
+      <div class="border px-[20px] w-[300px] bg-black text-white rounded-lg mt-[20px]">
+        <div class="flex justify-between w-[100%] my-[10px]">
+          <p class="text-[18px] font-bold">Password Length</p>
+          <p class="text-[18px] font-bold" id="length-number">0</p>
         </div>
 
         <!-- slider  --> 
         <input
-          class="w-[100%]"
+          class="w-[100%] my-[10px] "
           type="range"
           min="1"
           max="20"
@@ -48,13 +52,14 @@
 
         <!-- checkbox  -->
 
+        <div class="flex flex-col gap-2 my-[10px]">
         <div class="">
-          <input type="checkbox" name="" id="uppercase" />
+          <input class="" type="checkbox" name="" id="uppercase"  />
           <label for="uppercase">Include Uppercase Letter</label>
         </div>
 
         <div class="">
-          <input type="checkbox" name="" id="lowercase" />
+          <input  type="checkbox" name="" id="lowercase" />
           <label for="lowercase">Include Lowercase Letter</label>
         </div>
 
@@ -67,10 +72,11 @@
           <input type="checkbox" name="" id="symbols" />
           <label for="symbols">Include Symbols</label>
         </div>
+      </div>
 
         <!-- strength area  -->
-        <div class="flex justify-between">
-          <p>Strength</p>
+        <div class="flex justify-between my-[10px] ">
+          <p class="text-[18px]">Strength</p>
           <div
             class="w-[20px] rounded-full bg-white h-[20px]"
             id="data-indicator"
@@ -78,9 +84,10 @@
         </div>
 
         <!-- gernerate button  -->
-        <button class="text-[25px] border px-[20px]" id="generate-btn">
+       <div class="flex justify-center  rounded-md my-[20px] bg-gradient-to-r from-cyan-500 to-blue-500 "> <button class="text-[22px] px-[20px] py-[10px] " id="generate-btn">
           Generate Password
         </button>
+      </div>
       </div>
     </div>
 
