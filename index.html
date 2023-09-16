@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="flex flex-col justify-center h-[100vh] w-[100vw] items-center">
+      <!-- heading -->
+      <div><h1 class="text-[30px]">Pawssord genertor</h1></div>
+
+      <!-- display container -->
+      <div
+        class="border w-[300px] flex justify-between px-[20px]"
+        id="password-display"
+      >
+        <input readonly placeholder="Password" id="pass" />
+
+        <button id="copy-btn">
+          <span id="copy-msg"></span>
+          <i class="fa-solid fa-copy"></i>
+        </button>
+      </div>
+
+      <!-- main - box -->
+
+      <div class="border px-[20px] w-[300px] bg-black text-white">
+        <div class="flex justify-between w-[100%]">
+          <p>Password Length</p>
+          <p id="length-number">0</p>
+        </div>
+
+        <!-- slider  --> 
+        <input
+          class="w-[100%]"
+          type="range"
+          min="1"
+          max="20"
+          value="9"
+          id="range-slider"
+        />
+
+        <!-- checkbox  -->
+
+        <div class="">
+          <input type="checkbox" name="" id="uppercase" />
+          <label for="uppercase">Include Uppercase Letter</label>
+        </div>
+
+        <div class="">
+          <input type="checkbox" name="" id="lowercase" />
+          <label for="lowercase">Include Lowercase Letter</label>
+        </div>
+
+        <div class="">
+          <input type="checkbox" name="" id="numbers" />
+          <label for="numbers">Include Numbers</label>
+        </div>
+
+        <div class="">
+          <input type="checkbox" name="" id="symbols" />
+          <label for="symbols">Include Symbols</label>
+        </div>
+
+        <!-- strength area  -->
+        <div class="flex justify-between">
+          <p>Strength</p>
+          <div
+            class="w-[20px] rounded-full bg-white h-[20px]"
+            id="data-indicator"
+          ></div>
+        </div>
+
+        <!-- gernerate button  -->
+        <button class="text-[25px] border px-[20px]" id="generate-btn">
+          Generate Password
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
