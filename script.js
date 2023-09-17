@@ -105,6 +105,13 @@ async function copycontent(){
         copy_msg.innerText="failed" ;
        }
 
+       copy_msg.classList.add("active");
+
+       setTimeout(() => {
+
+        copy_msg.classList.remove("active")
+       }, 2000);
+
         
 
 }

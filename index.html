@@ -10,6 +10,41 @@
     />
     <link rel="stylesheet" href="main.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+
+.j input:checked::before {
+    content: "✓";
+    position: absolute;
+    color: black;
+    left:10%;
+    top:-40%;
+    font-size: 20px;  
+
+}
+
+.tooltip{
+    position: absolute;
+    background-color: yellow;
+    top: -30px;
+    left: -20px;    
+    padding: 0px 10px ;
+    border-radius: 8px;
+    font-weight: 500;
+    transform: scale(1);
+    opacity: 0;
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+
+}
+
+.tooltip.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+    </style>
   </head>
   <body>
     <div class="flex flex-col justify-center h-[100vh] w-[100vw] items-center
@@ -26,8 +61,8 @@
       >
         <input readonly placeholder="Password" id="pass" class="bg-transparent text-[20px] outline-none text-yellow-400  " />
 
-        <button id="copy-btn">
-          <span id="copy-msg"></span>
+        <button id="copy-btn" class="relative">
+          <span class="tooltip" id="copy-msg"></span>
           <i class="fa-solid fa-copy text-white text-[20px]"></i>
         </button>
       </div>
@@ -51,26 +86,29 @@
         />
 
         <!-- checkbox  -->
-
+       
         <div class="flex flex-col gap-2 my-[10px]">
-        <div class="">
-          <input class="" type="checkbox" name="" id="uppercase"  />
+        <div class="flex items-center gap-2 j">
+          <input class=" appearance-none rounded-sm relative font-bold checked:bg-[#66f5ff] h-[18px] w-[18px] bg-white" type="checkbox" name="" id="uppercase"  />
+          <!-- <i class="fa-solid  fa-check opacity-1 absolute kk"></i> -->
           <label for="uppercase">Include Uppercase Letter</label>
         </div>
 
-        <div class="">
-          <input  type="checkbox" name="" id="lowercase" />
+        <div class="flex items-center gap-2 j">
+          <input class="appearance-none rounded-sm relative font-bold checked:bg-[#66f5ff] h-[18px] w-[18px] bg-white"  type="checkbox" name="" id="lowercase" />
+          
           <label for="lowercase">Include Lowercase Letter</label>
         </div>
 
-        <div class="">
-          <input type="checkbox" name="" id="numbers" />
+        <div class="flex items-center gap-2 j">
+          <input class="appearance-none rounded-sm relative font-bold checked:bg-[#66f5ff] h-[18px] w-[18px] bg-white" type="checkbox" name="" id="numbers" />
           <label for="numbers">Include Numbers</label>
         </div>
 
-        <div class="">
-          <input type="checkbox" name="" id="symbols" />
+        <div class="flex  relative items-center gap-2 j">
+          <input class="appearance-none rounded-sm relative font-bold checked:bg-[#66f5ff] h-[18px] w-[18px] bg-white" type="checkbox" name="" id="symbols" />
           <label for="symbols">Include Symbols</label>
+        
         </div>
       </div>
 
