@@ -158,6 +158,9 @@ allcheckbox.forEach((checkbox)=>{
 })
 
 generate_btn.addEventListener('click' , ()=>{
+
+
+        
         if(checkcount<=0) return;
 
         if(passwordlength<checkcount){
@@ -218,6 +221,7 @@ generate_btn.addEventListener('click' , ()=>{
         
 
         calcstrength();
+    
 
         
         
